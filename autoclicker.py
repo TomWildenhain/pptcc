@@ -59,7 +59,6 @@ def can_click_new(x, y):
     if not get_pixel_at(x, y) in CLICK_COLORS:
         return False
     mx, my = pyautogui.position()
-    ox, oy = mx, my
     while my > 0:
         if pixel_matches_color(mx, my, WALL_COLOR):
             return False
