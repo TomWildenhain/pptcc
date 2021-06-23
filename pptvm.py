@@ -802,7 +802,6 @@ def test_verdict(cmd1, cmd2):
         def __init__(self, flags):
             self.flags = flags
     d = Dummy(Flags())
-    import random
     from copy import deepcopy
     for i in range(100):
         d.flags.carry = random.choice([True, False])
