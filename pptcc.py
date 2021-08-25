@@ -31,7 +31,6 @@ def main():
     watcom_dis('test.myout', 'mytest.masm', 'mytest.gas')
     print('*** Compiling pptasm ***')
     ppt_asm('mytest.lst', 'sometest.pptasm')
-    pass
 
 def ppt_asm(listing_file, output_path):
     pass

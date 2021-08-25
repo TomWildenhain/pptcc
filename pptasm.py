@@ -46,7 +46,6 @@ def assemble_gas(file_path, output_path):
         lines = file.readlines()
         lines = [line.replace('\t', ' ').rstrip() for line in lines]
         lines = [line for line in lines if line]
-    loc_text = find_line(lines, '.new_section _TEXT, "crx0"')
     section_map = {}
     section = []
     section_map['INITIAL'] = section
@@ -65,7 +64,6 @@ def assemble_gas(file_path, output_path):
     labeled_text = parse_section_labels('_TEXT', text_section)
     labeled_const = parse_section_labels('CONST', const_section)
     labeled_data = parse_section_labels('_DATA', data_section)
-    labels = set(r.label for l in [labeled_text, labeled_const, labeled_data] for r in l)
     labels_to_offsets = get_label_offsets(labeled_data, 2**15)
     labels_to_offsets.update(get_label_offsets(labeled_const, 0))
     
